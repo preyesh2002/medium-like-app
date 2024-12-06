@@ -33,13 +33,28 @@ export const Blogs =()=>{
     return(<div> <Appbar/>
     <div className="flex justify-center">
         <div>
-            {blogs.map(blog=><BlogCard 
+        {blogs.map((blog) => {
+    const currentDate = new Date();
+    const options: Intl.DateTimeFormatOptions = { 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    };
+    const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+            
+            return(<BlogCard 
             id={blog.id}
             authorName={blog.author.name||"Anonymous"}
         title={blog.title}
         content={blog.content}
-        publishedDate={"2nd Feb"}
-        />)}
+        
+        publishedDate={formattedDate}
+        />
+    );
+    }
+        )}
+            
            
         
 
