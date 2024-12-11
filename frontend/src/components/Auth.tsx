@@ -1,6 +1,6 @@
 import { Link , useNavigate} from "react-router-dom";
 import { ChangeEvent, useState } from "react";
-import { SingupInput } from "@preyeshcp/medium-common";
+//import { SingupInput } from "@preyeshcp/medium-common";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
