@@ -1,8 +1,8 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 
-const GuestLogin: React.FC = () => {
-  const router = useRouter();
+export const GuestLogin: React.FC = () => {
+  const navigate = useNavigate();
 
   const handleGuestLogin = () => {
     // Set the Authorization token in localStorage
@@ -12,12 +12,5 @@ const GuestLogin: React.FC = () => {
     );
     
     // Redirect to /blogs page after setting the token
-    router.push('/blogs'); // Redirecting to the /blogs page
+    navigate('/blogs');
   };
-
-  return (
-    <button onClick={handleGuestLogin}>Guest Login</button>
-  );
-};
-
-export default GuestLogin;
