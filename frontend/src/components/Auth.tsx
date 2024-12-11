@@ -19,13 +19,20 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
         try{
             const response=await axios.post(`${BACKEND_URL}/api/v1/user/${type==="signup"?"signup":"signin"}`,postInputs
             );
-            const jwt = response.data;
-            localStorage.setItem("token",jwt);
-            navigate('/blogs')
+           const jwt = response.data;
+            if (jwt) {
+                    localStorage.setItem("token", jwt);
+                    navigate('/blogs');
+                    } 
+            else {
+                    alert("No token received");
+                }
 
         }
         catch(e){
-            alert("error while signing up")
+            console.error(e);
+            alert(type === "signin" ? "Error while signing in" : "Error while signing up");
+
         }
          
     }
@@ -59,7 +66,7 @@ setPostInputs({
 })
 
                 }}/>
-                 <LabelledInput label="Password" type={"password"} placeholder='123456A-Z' onChange={(e)=>{
+                 <LabelledInput label="Password" type={"password"} placeholder='Password' onChange={(e)=>{
 setPostInputs({
     ...postInputs,
     password:e.target.value
