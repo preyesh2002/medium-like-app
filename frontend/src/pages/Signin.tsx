@@ -1,5 +1,6 @@
 import { Quote } from "../components/quote";
 import { Auth } from "../components/Auth";
+import {GuestLogin} from "../components/Guest";
 export const Signin = () => {
     return (
         <>
@@ -10,6 +11,10 @@ export const Signin = () => {
                 </div>
                 <div className="hidden lg:block">
                     <Quote /></div>
+                <div>
+                    <GuestLogin />
+                
+                </div>
                 
             </div>
         </>
