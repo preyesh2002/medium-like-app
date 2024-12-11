@@ -8,7 +8,7 @@ import { BACKEND_URL } from "../config";
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
     const navigate=useNavigate()
-    const [postInputs,setPostInputs]=useState<SingupInput>({
+    const [postInputs,setPostInputs]=useState({
         // name:"",
         email:"",
         password:""
