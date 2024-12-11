@@ -1,7 +1,7 @@
-
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const GuestLogin: React.FC = () => {
+const GuestLogin: React.FC = () => {
   const navigate = useNavigate();
 
   const handleGuestLogin = () => {
@@ -12,5 +12,12 @@ export const GuestLogin: React.FC = () => {
     );
     
     // Redirect to /blogs page after setting the token
-    navigate('/blogs');
+    navigate('/blogs'); // Redirecting to the /blogs page
   };
+
+  return (
+    <button onClick={handleGuestLogin}>Guest Login</button>
+  );
+};
+
+export default GuestLogin;
