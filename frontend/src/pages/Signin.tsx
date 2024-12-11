@@ -1,6 +1,6 @@
 import { Quote } from "../components/quote";
 import { Auth } from "../components/Auth";
-import {GuestLogin} from "../components/Guest";
+import {GuestLogin} from "../components/guest";
 export const Signin = () => {
     return (
         <>
